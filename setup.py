@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-from fitness-grapher import service_details
+from fitness_grapher import service_details
 
 setup(
     name=service_details['name'],
@@ -8,9 +8,14 @@ setup(
 
     packages=find_packages(),
 
+    install_requires=[
+        'google-api-python-client==1.6.5',
+        'click==6.7'
+    ],
+
     entry_points={
         'console_scripts': [
-            'fitness-grapher = fitness-grapher:main'
+            'fitness-grapher = fitness_grapher.__main__:main'
         ]
     }
 )
